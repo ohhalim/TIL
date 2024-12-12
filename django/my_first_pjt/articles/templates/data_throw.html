@@ -1,0 +1,15 @@
+{% extends 'base.html'%}
+
+{% block content %}
+    <h1>Data Throw</h1>
+
+
+    <form action="/data-catch/" method="GET">
+
+        <label for="message">데이터 입력 :</label>
+        <input type="text" id=""massage" name="message">
+
+        <button type="submit">전송</button>
+
+    </form>
+{% endblock content %}

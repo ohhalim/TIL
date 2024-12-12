@@ -4,8 +4,7 @@ from django.shortcuts import render
 def index(request):
     return render(request, 'index.html')
         # 탬플릿을 랜더해서 리턴할수있다
-def users(request):
-    return render(request, 'users.html')
+
     
 def hello(request):
 
@@ -18,5 +17,12 @@ def hello(request):
     } 
 
 def data_throw(request):
-    return render(request, 'data-throw.html')
+    return render(request, 'data_throw.html')
+
+
+def data_catch(request):
+    message = request.GET.get("message")
+    context = {'message': message}
+    return render(request, 'data_catch.html', context)
+
 
