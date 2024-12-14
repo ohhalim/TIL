@@ -15,14 +15,17 @@ def hello(request):
         'tags': tags,
         'books': books,
     } 
+    return render(request, 'hello.html', context)
 
 def data_throw(request):
     return render(request, 'data_throw.html')
 
 
 def data_catch(request):
-    message = request.GET.get("message")
-    context = {'message': message}
+    data = request.GET.get("message")
+    context = {
+        'data': data,
+    }
     return render(request, 'data_catch.html', context)
 
 
