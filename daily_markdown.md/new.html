@@ -1,0 +1,45 @@
+<html>
+	<head>
+		<script>
+			function loginFunction(event) {
+				event.preventDefault(); // 기본 제출 동작 방지
+				
+				const id = document.querySelector('#login_id').value;
+				const pw = document.querySelector('#login_pw').value;
+				
+				fetch(
+					"http://localhost:3000/login",
+					{
+						method: "POST",
+						body: JSON.stringify({
+							id: id,
+							pw: pw
+						})
+					}
+				).then((data) => {
+					console.log(data)
+				});
+			}
+		</script>
+        <style>
+            .container {
+                width: 100%;
+                height: 25%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                align-items: center;
+            }
+        </style>
+	</head>
+	<body>
+        <form class="my-form" onsubmit="loginFunction(event)">
+            <div class="container">
+                <span><b>나의 로그인 화면</b></span>
+                <input id="login_id"/>
+                <input id="login_pw" type="password"/>
+                <button type="submit">로그인</button>
+            </div>
+        </form>
+	</body>
+</html>
