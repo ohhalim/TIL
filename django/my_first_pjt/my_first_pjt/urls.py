@@ -18,7 +18,6 @@ from django.contrib import admin
 from django.urls import path, include
 from articles import views
 
-app_name = "my_first_pjt"
 
 urlpatterns = [
     path('admin/', admin.site.urls),
