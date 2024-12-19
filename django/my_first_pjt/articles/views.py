@@ -1,5 +1,6 @@
-from django.shortcuts import rediect, render
+from django.shortcuts import redirect, render
 from .models import Article
+from .forms import ArticleForm
 
 # Create your views here.
 def index(request):
@@ -22,14 +23,51 @@ def article_detail(request, pk):
 def data_throw(request):
     return render(request, 'data_throw.html')
 
-def new(request):
-    return render(request, 'new.html')
+def new(request): 
+    forms = ArticleForm()
+    context = {"forms": forms}
+    return render(request, 'new.html', context)
 
 def create(request):
+    if request.method == "POST":
+        form = ArticleForm(request.POST)
+        if form.is_valid():
+            # 데이터를 지정하고
+            article = form.save()
+            # 다른곳으로 리다이렉트
+            return redirect("article_detail", article.pk)
+    else: 
+        form = ArticleForm()
+    
+    return redirect("new")
+
+    # title = request.POST.get("title")
+    # content = request.POST.get("content")
+    # article = Article.objects.create(title=title, content=content)
+    # return redirect("article_detail", article.pk)
+
+def edit(request, pk):
+    article = Article.objects.get(pk=pk)
+    context = {"article": article}
+    return render(request, "edit.html", context)
+
+def update(request, pk):
     title = request.POST.get("title")
-    content = request.POST.get("content")
-    Article.objects.create(title=title, content=content)
-    return rediect("articles")
+    content = request.POST.get("content")    
+
+    article = Article.objects.get(pk=pk)
+    article.title =title
+    article.content = content
+    article.save()
+
+    return redirect("article_detail", article.pk)
+
+def delete(request, pk):
+    if request.method == "POST":
+        article = Article.objects.get(pk=pk)
+        article.delete()
+        return redirect("articles")
+
 
 def data_catch(request):
     data = request.GET.get("message")
@@ -37,5 +75,7 @@ def data_catch(request):
         'data': data,
     }
     return render(request, 'data_catch.html', context)
+
+
 
 
