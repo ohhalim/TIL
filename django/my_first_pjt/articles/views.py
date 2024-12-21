@@ -4,7 +4,7 @@ from .forms import ArticleForm
 
 # Create your views here.
 def index(request):
-    return render(request, 'index.html')
+    return render(request, 'articles/index.html')
         # 탬플릿을 랜더해서 리턴할수있다
 
 def articles(request):
@@ -12,21 +12,14 @@ def articles(request):
     context = {
         "articles": articles,
     }
-    return render(request, 'articles.html', context)
+    return render(request, 'articles/articles.html', context)
 
 def article_detail(request, pk):
     article = Article.objects.get(pk=pk)
     context = {"article": article}
-    return render(request, "article_detail.html", context)
+    return render(request, "articles/article_detail.html", context)
 
 
-def data_throw(request):
-    return render(request, 'data_throw.html')
-
-def new(request): 
-    forms = ArticleForm()
-    context = {"forms": forms}
-    return render(request, 'new.html', context)
 
 def create(request):
     if request.method == "POST":
@@ -35,47 +28,51 @@ def create(request):
             # 데이터를 지정하고
             article = form.save()
             # 다른곳으로 리다이렉트
-            return redirect("article_detail", article.pk)
+            return redirect("aritles:article_detail", article.pk)
     else: 
         form = ArticleForm()
-    
-    return redirect("new")
 
-    # title = request.POST.get("title")
-    # content = request.POST.get("content")
-    # article = Article.objects.create(title=title, content=content)
-    # return redirect("article_detail", article.pk)
+    context = {"form": form}
+    return render(request, "articles/create.html", context)
 
-def edit(request, pk):
-    article = Article.objects.get(pk=pk)
-    context = {"article": article}
-    return render(request, "edit.html", context)
+
 
 def update(request, pk):
-    title = request.POST.get("title")
-    content = request.POST.get("content")    
-
     article = Article.objects.get(pk=pk)
-    article.title =title
-    article.content = content
-    article.save()
+    if request.method == "POST":
+        form = ArticleForm(request.POST, instance=article)
+        if form.is_valid():
+            article = form.save()
+            return redirect("articles:article_detail", article.pk)
 
-    return redirect("article_detail", article.pk)
+    else:
+        form = ArticleForm(instance=article)
+    
+    context = {
+        "form": form,
+        "article": article,
+    }
+    return render(request, "articles/update.html", context)
+
+
 
 def delete(request, pk):
     if request.method == "POST":
         article = Article.objects.get(pk=pk)
         article.delete()
-        return redirect("articles")
+        return redirect("articles:articles")
+    return redirect("articles:article_detail", pk)
+
+def data_throw(request):
+    return render(request, 'articles/data_throw.html')
 
 
 def data_catch(request):
-    data = request.GET.get("message")
+    data = request.GET.get("articles/message")
     context = {
         'data': data,
     }
-    return render(request, 'data_catch.html', context)
-
+    return render(request, 'articles/data_catch.html', context)
 
 
 

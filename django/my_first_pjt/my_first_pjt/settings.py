@@ -37,13 +37,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
-    'django_extensions', # 추가
-
-    "articles", # 추가
-    "users", 
-    
+    'django_extensions',  # 추가된 앱
+    'accounts',           # 올바른 앱 이름
+    'articles',           # 올바른 앱 이름
+    'users',              # 올바른 앱 이름
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

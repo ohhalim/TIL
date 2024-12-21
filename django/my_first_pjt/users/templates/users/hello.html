@@ -1,0 +1,14 @@
+{% extends 'base.html'%}
+
+{% block content %}
+   <h1>{{ name }}</h1>
+    <p>첫번쨰 태그는 {{tags.0|upper}} </p>
+    <p> 모든 책 목록 </p>
+    <ul>
+        {% for book in books %}
+            <li>{{book}}</li>
+        {% endfor %}
+    </ul>
+      
+    <a href="{% url 'users:index' %}">INDEX로 가기</a>
+{% endblock content %}
