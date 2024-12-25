@@ -15,5 +15,7 @@ urlpatterns = [
 
     path('data_throw/', views.data_throw, name ='throw'),
     path('data_catch/', views.data_catch, name ='catch'), 
+    path("<int:pk>/comments/", views.comment_create, name="comment_create"),
  ]
 
+    

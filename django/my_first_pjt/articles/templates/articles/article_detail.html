@@ -4,6 +4,12 @@
 
     <h2>글 상세 페이지</h2>
     <p>제목: {{ article.title }}</p>
+    <p>작성자: {{ article.author.username }}</p>
+
+    {% if article.image %}
+        <img src="{{ article.image.url }}">
+    {% endif %}
+
     <p>내용: {{ article.content }}</p>
     <p>작성일시: {{ article.created_at }}</p>
     <p>수정일시: {{ article.updated_at }}</p>
@@ -15,8 +21,21 @@
     <form action="{% url 'articles:delete' article.pk %}" method="POST">
         {% csrf_token %}
         <input type="submit" value="삭제">
-
+    <br>
+    <hr>
+    <h3>댓글</h3>
+    <form action="{% url "articles:comment_create" article.pk %}" method="POST">
+        {% csrf_token %}
+        {{ comment_form.as_p }}
+        <input type="submit" value="댓글작성">
+    </form>     
     
-    </form>
+    {% for comment in comments %}
+ 
+    <li>
+        <p>{{ comment.content }}</p>
+    </li>
+    {% endfor %}
 
+        
 {% endblock content %}

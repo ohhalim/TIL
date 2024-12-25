@@ -1,11 +1,14 @@
 {% extends 'base.html' %}
+{% load static %}
+
 {% block content %}
     <h1>INDEX</h1>
 
+    <img src="{% static 'articles/cat.png' %}">
     <ul>
-    <li><a href="{% url 'articles:throw' %}">Throw</a></li>
-    <li><a href="{% url 'users:users' %}">Users로 이동</a></li>
     <li><a href="{% url 'articles:articles' %}">글목록</a></li>
+    <li><a href="{% url 'articles:throw' %}">Throw</a></li>
+    <li><a href="{% url 'users:users' %}">Users</a></li>
 
     </ul>
 {% endblock content %}

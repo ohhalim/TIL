@@ -1,25 +1,44 @@
- <!DOCTYPE html>
- <html lang="en">
- <head>
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href= "{% static 'css/style.css' %}">
     <title>Document</title>
- </head>
- <body>
-   <div class="navbar">
-      <a href="{% url 'accounts:login' %}">로그인</a> 
 
-      <form action="{% url 'accounts:logout' %}" method="POST">
-         {% csrf_token %}
-         <input type="submit" value='로그아웃'></input>
-      </form>
-   </div>
+    {% block head %}{% endblock head %}
+</head>
+<body>
 
-   <div class="container">
-      {% block content %}
-      {% endblock content %}
-      
-   </div>
- 
- </body>
- </html>
+    <div class="navbar">
+        {% if request.user.is_authenticated %}
+        <h3>안녕하세요, {{ request.user.username }}님</h3>
+        <form action="{% url 'accounts:logout' %}" method="POST">
+            {% csrf_token %}
+            <input type="submit" value="로그아웃">
+        </form>
+
+        <a href="{% url 'accounts:update' %}">회원정보수정</href></a>
+
+        <form action="{% url 'accounts:delete' %}" method="POST">
+            {% csrf_token %}
+            <input type="submit" value="회원 탈퇴">
+
+
+        </form>
+
+        {% else %}
+        <a href="{% url 'accounts:login' %}">로그인</a>
+        <a href="{% url 'accounts:signup' %}">회원가입</a>
+        {% endif %}
+    </div>
+
+    <div class="container">
+        {% block content %}
+        {% endblock content %}
+    </div>
+
+</body>
+</html>
