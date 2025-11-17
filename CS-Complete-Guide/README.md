@@ -9,11 +9,14 @@
 - ✅ **이론과 실무의 완벽한 연결**
 - ✅ **면접 필수 질문 완벽 대비**
 - ✅ **실제 코드 예시로 즉시 적용 가능**
-- ✅ **방대한 CS 지식을 4개 파트로 압축**
+- ✅ **방대한 CS 지식을 6개 핵심 분야로 체계화**
+- ✅ **이론적 깊이 + 실무 적용 = 완전 정복**
 
 ---
 
-## 📚 4대 핵심 분야
+## 📚 6대 핵심 분야
+
+### 기초 핵심 (Foundation)
 
 ### 1️⃣ [자료구조 & 알고리즘](./01-data-structures-algorithms.md)
 
@@ -91,6 +94,46 @@
 
 ---
 
+### 고급 심화 (Advanced)
+
+### 5️⃣ [컴파일러 & 프로그래밍 언어 이론](./05-compilers-languages.md)
+
+> **코드가 어떻게 실행되는가? - 깊은 이해의 시작**
+
+**주요 내용:**
+- 🔧 **컴파일러 구조**: Lexer, Parser, Semantic Analyzer
+- 📝 **어휘/구문/의미 분석**: Token, AST, Type Checking
+- ⚡ **최적화**: Constant Folding, Loop Optimization, Inlining
+- 🎯 **코드 생성**: Register Allocation, Instruction Selection
+- 🗑️ **가비지 컬렉션**: Mark-Sweep, Generational GC
+- 🚀 **JIT 컴파일**: Hotspot Detection, Tiered Compilation
+- 🔤 **타입 시스템**: Static vs Dynamic, Type Inference, Generics
+- 🧵 **동시성 모델**: Threads, Actors, CSP, Async/Await
+
+**학습 시간:** 2-3주
+**난이도:** ⭐⭐⭐⭐⭐
+
+---
+
+### 6️⃣ [분산 시스템 & 클라우드 아키텍처](./06-distributed-systems.md)
+
+> **현대 대규모 시스템의 핵심 - 확장성, 가용성, 일관성**
+
+**주요 내용:**
+- 🌍 **분산 시스템 기초**: CAP 정리, 시계 동기화, Fallacies
+- 🔄 **일관성 모델**: Strong, Eventual, Causal Consistency
+- 🤝 **합의 알고리즘**: Paxos, Raft, BFT
+- 💾 **분산 데이터**: Partitioning, Consistent Hashing, Replication
+- 📨 **메시징**: Kafka, RabbitMQ, Event Streaming
+- 🏗️ **마이크로서비스**: Service Discovery, API Gateway, gRPC
+- 🔀 **분산 트랜잭션**: 2PC, Saga Pattern
+- 📊 **모니터링**: Distributed Tracing, Observability
+
+**학습 시간:** 3-4주
+**난이도:** ⭐⭐⭐⭐⭐
+
+---
+
 ## 🗺️ 학습 로드맵
 
 ### 초급 (1-2개월)
@@ -113,12 +156,14 @@
 11-12주: 통합 복습 및 면접 준비
 ```
 
-### 고급 (3-4개월)
+### 고급 (4-6개월)
 ```
 1-4주: 고급 알고리즘 (그래프 알고리즘, 문자열)
 5-8주: 메모리 관리, 가상 메모리 심화
 9-12주: 네트워크 고급 (TCP 내부 동작, 혼잡 제어)
 13-16주: DB 최적화, NoSQL, 분산 데이터베이스
+17-20주: 컴파일러 이론 (Lexer, Parser, 최적화)
+21-24주: 분산 시스템 (CAP, Consensus, Microservices)
 ```
 
 ---
