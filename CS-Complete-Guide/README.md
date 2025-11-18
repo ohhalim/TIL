@@ -9,12 +9,12 @@
 - ✅ **이론과 실무의 완벽한 연결**
 - ✅ **면접 필수 질문 완벽 대비**
 - ✅ **실제 코드 예시로 즉시 적용 가능**
-- ✅ **방대한 CS 지식을 6개 핵심 분야로 체계화**
+- ✅ **방대한 CS 지식을 10개 핵심 분야로 완전 체계화**
 - ✅ **이론적 깊이 + 실무 적용 = 완전 정복**
 
 ---
 
-## 📚 6대 핵심 분야
+## 📚 10대 핵심 분야
 
 ### 기초 핵심 (Foundation)
 
@@ -134,6 +134,82 @@
 
 ---
 
+### 7️⃣ [컴퓨터 구조 (Computer Architecture)](./07-computer-architecture.md)
+
+> **하드웨어와 소프트웨어의 경계 - CPU부터 GPU까지**
+
+**주요 내용:**
+- 🔧 **CPU 내부 구조**: ALU, 제어 유닛, 레지스터
+- 🔄 **파이프라이닝**: 5단계 파이프라인, 해저드 처리
+- 💾 **메모리 계층**: 캐시(L1/L2/L3), DRAM, 가상 메모리
+- 🚀 **캐시 설계**: Set-Associative, LRU, MESI 프로토콜
+- 🔀 **병렬 처리**: SIMD, 멀티코어, Lock-Free 자료구조
+- 🎮 **GPU 아키텍처**: CUDA, 메모리 계층, Warp 스케줄링
+- 🧠 **Out-of-Order Execution**: Tomasulo 알고리즘, 분기 예측
+- ⚡ **성능 최적화**: AMAT 계산, Prefetching, Branch Prediction
+
+**학습 시간:** 2-3주
+**난이도:** ⭐⭐⭐⭐⭐
+
+---
+
+### 8️⃣ [보안과 암호학 (Security & Cryptography)](./08-security-cryptography.md)
+
+> **안전한 시스템 구축의 필수 지식**
+
+**주요 내용:**
+- 🔐 **암호학 기초**: 대칭키, 공개키, 해시 함수
+- 🔒 **암호화 알고리즘**: AES, RSA, ECC, ChaCha20
+- 🔑 **키 교환**: Diffie-Hellman, ECDH, Perfect Forward Secrecy
+- ✍️ **디지털 서명**: RSA-PSS, ECDSA, Ed25519
+- 🛡️ **웹 보안**: XSS, CSRF, SQL Injection 방어
+- 🌐 **네트워크 보안**: TLS/SSL, Certificate Pinning, VPN
+- 🔨 **비밀번호 해싱**: bcrypt, Argon2, PBKDF2
+- 🏰 **시스템 보안**: Buffer Overflow, ASLR, Sandboxing
+
+**학습 시간:** 2-3주
+**난이도:** ⭐⭐⭐⭐
+
+---
+
+### 9️⃣ [AI/ML 기초 (AI/ML Fundamentals)](./09-ai-ml-fundamentals.md)
+
+> **현대 개발자의 필수 교양 - 머신러닝부터 LLM까지**
+
+**주요 내용:**
+- 📊 **머신러닝 기초**: Linear/Logistic Regression, Decision Tree
+- 🧠 **신경망**: MLP, CNN, RNN, LSTM
+- ⚡ **최적화**: SGD, Adam, Learning Rate Scheduling
+- 🎯 **정규화**: Dropout, Batch Normalization, L1/L2
+- 🔤 **Transformer**: Self-Attention, Multi-Head Attention
+- 💬 **NLP**: BERT, GPT, Tokenization, Embedding
+- 🎮 **강화학습**: Q-Learning, Policy Gradient, DQN
+- 🚀 **대규모 모델**: LLM 아키텍처, Fine-tuning, Prompt Engineering
+
+**학습 시간:** 3-4주
+**난이도:** ⭐⭐⭐⭐⭐
+
+---
+
+### 🔟 [소프트웨어 공학 (Software Engineering)](./10-software-engineering.md)
+
+> **확장 가능하고 유지보수 가능한 시스템 설계**
+
+**주요 내용:**
+- 🎨 **디자인 패턴**: GoF 23가지 패턴 (Singleton, Factory, Observer...)
+- 🏗️ **아키텍처 패턴**: MVC, MVVM, Clean Architecture, Event-Driven
+- 📐 **SOLID 원칙**: SRP, OCP, LSP, ISP, DIP
+- ✅ **TDD**: Red-Green-Refactor, Mocking, Test Doubles
+- 🔧 **리팩토링**: Code Smell 제거, Extract Method, Polymorphism
+- 🔀 **동시성 패턴**: Producer-Consumer, Thread Pool, Future/Promise
+- 🌐 **마이크로서비스**: Service Discovery, API Gateway, Circuit Breaker
+- 🚀 **DevOps**: CI/CD, Docker, Kubernetes, Monitoring
+
+**학습 시간:** 2-3주
+**난이도:** ⭐⭐⭐⭐
+
+---
+
 ## 🗺️ 학습 로드맵
 
 ### 초급 (1-2개월)
@@ -156,7 +232,7 @@
 11-12주: 통합 복습 및 면접 준비
 ```
 
-### 고급 (4-6개월)
+### 고급 (6-8개월)
 ```
 1-4주: 고급 알고리즘 (그래프 알고리즘, 문자열)
 5-8주: 메모리 관리, 가상 메모리 심화
@@ -164,6 +240,10 @@
 13-16주: DB 최적화, NoSQL, 분산 데이터베이스
 17-20주: 컴파일러 이론 (Lexer, Parser, 최적화)
 21-24주: 분산 시스템 (CAP, Consensus, Microservices)
+25-28주: 컴퓨터 구조 (CPU 파이프라인, 캐시, GPU)
+29-32주: 보안과 암호학 (암호화, TLS, 웹 보안)
+33-36주: AI/ML 기초 (신경망, Transformer, LLM)
+37-40주: 소프트웨어 공학 (디자인 패턴, Clean Architecture, TDD)
 ```
 
 ---
@@ -433,8 +513,8 @@
 
 ---
 
-**Last Updated**: 2025-11-10
-**Version**: 1.0
+**Last Updated**: 2025-11-18
+**Version**: 2.0 (10개 핵심 분야 완성)
 **License**: MIT
 
 **Made with ❤️ for Developers**
